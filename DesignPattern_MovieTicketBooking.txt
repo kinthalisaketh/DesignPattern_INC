@@ -1,0 +1,33 @@
+MOVIE TICKET BOOKING SYSTEM
+
+Booking Flow Complexity:
+
+The flow of selecting a movie, selecting seats, making payments, and confirming the booking can become complex as more features are added.
+
+Observer Pattern:
+
+To notify users about booking status updates (such as seat availability or payment status), the Observer Pattern can be used. 
+This is especially useful when handling multiple users interacting with the same movie or theater.
+
+Subject (TicketBookingSystem):
+This class maintains a list of observers (users who are interested in booking updates).
+It provides methods to notify observers about changes (e.g., seat availability, booking status).
+
+Observer (Customer):
+This is an class that defines the method update().
+
+ConcreteObserver (Customer):
+The concrete observer would implement a method to handle those updates and perform actions accordingly.
+
+Multithreding in MovieTicketBooking:
+
+Handling Multiple User Requests Simultaneously
+Problem: Many users may try to book tickets at the same time, especially for popular movies, leading to a large number of simultaneous requests.
+Solution: Multithreading allows each user’s booking request to be handled in a separate thread. This means the system can process several requests at the same time without waiting for one request to finish before handling the next.
+
+For example:
+Thread 1: Processes booking for User A who wants 2 tickets.
+Thread 2: Processes booking for User B who wants 3 tickets.
+Thread 3: Processes booking for User C who wants 4 tickets.
+
+Each thread can work independently, which ensures that the system doesn't become unresponsive or slow when multiple users are interacting with it. 
